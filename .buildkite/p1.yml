@@ -2,4 +2,4 @@ env:
   FOO: "bar"
 
 steps:
-  - command: echo "+++ p111 - $$FOO"
+  - command: echo "+++ p1111 - $$FOO"
