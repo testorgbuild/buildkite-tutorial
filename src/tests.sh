@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ "$BUILDKITE_PARALLEL_JOB" == 3 ]]; then
+if [[ "$BUILDKITE_RETRY_COUNT" == 0 ]]; then
    exit -1
 fi
 
-echo "$BUILDKITE_PARALLEL_JOB"
+echo "$BUILDKITE_RETRY_COUNT"
 
