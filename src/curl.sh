@@ -1,11 +1,4 @@
 #!/bin/bash
 
-set -eu
-
-# Generate YAML file
-cat << EOF > config.yaml
-steps:
-  - trigger: testtrigger
-EOF
-
-buildkite-agent pipeline upload config.yaml
+buildkite-agent annotate "first error" --style error --context "auto_fix"
+buildkite-agent annotate "second error" --style 'error'
