@@ -1,0 +1,21 @@
+steps:
+- key: test
+  label: Test
+  command:
+  - make test
+  artifact_paths: test_output/junit.xml
+- label: Test Annotate
+  plugins:
+  - junit-annotate#v2.4.1:
+      artifacts: test_output/junit.xml
+  depends_on:
+  - test
+  allow_dependency_failure: true
+- label: Release
+  command:
+  - make release
+  branches: main
+  depends_on:
+  - test
+agents:
+  queue: dpd
