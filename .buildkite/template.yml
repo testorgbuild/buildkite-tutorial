@@ -2,5 +2,5 @@ steps:
   - command: ./src/tests.sh
     label: "Test %n"
     parallelism: 4
-agent:
+agents:
   queue: dpq
