@@ -11,7 +11,7 @@ steps:
   depends_on:
   - test
   allow_dependency_failure: true
-- label: Release
+- label: Releases
   command:
   - make release
   branches: main
